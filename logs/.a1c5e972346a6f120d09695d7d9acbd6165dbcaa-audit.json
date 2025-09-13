@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/zoro/Desktop/idy/logs/.a1c5e972346a6f120d09695d7d9acbd6165dbcaa-audit.json",
+    "files": [
+        {
+            "date": 1757702502463,
+            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-12.log",
+            "hash": "d84621f1ba40397c0ef707f046460875c23dc0a6cf24b4e74a0b0471c2be984c"
+        },
+        {
+            "date": 1757715794482,
+            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-13.log",
+            "hash": "378ad915b5413d6cbdc5d6bce30262a3a6562c837d5f524f16d220f4c88c5e9e"
+        }
+    ],
+    "hashType": "sha256"
+}

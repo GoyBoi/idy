@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Mmwafrika Store</title>
+</head>
+<body class="bg-black text-white">
+    <div id="root"></div>
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error('Global error:', message, 'at', source, ':', lineno, ':', colno);
+            console.error('Error object:', error);
+            document.body.innerHTML += '<div style="color: red; padding: 20px;"><h2>JavaScript Error:</h2><p>' + message + '</p><p>at ' + source + ':' + lineno + ':' + colno + '</p></div>';
+            return true;
+        };
+
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled promise rejection:', event.reason);
+            document.body.innerHTML += '<div style="color: red; padding: 20px;"><h2>Unhandled Promise Rejection:</h2><p>' + event.reason + '</p></div>';
+        });
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>
