@@ -1,1 +1,162 @@
-node_modules
+# Dependencies
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.out/
+
+# Environment files
+.env*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+coverage/
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+*.debug.log
+*.dmp
+*.core
+
+# Webpack dev server
+*.hot-update.*
+
+# Local development files
+*.local
+
+# Package lock files
+package-lock.json
+yarn.lock
+
+# Editor backup files
+*~
+.#*
+
+# macOS specific
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows specific
+NTUSER.DAT*
+ntuser.dat*
+*.lnk
+
+# Linux specific
+.*~
+Trash-*/
+
+# Debugging files
+debug.html
+
+# Distribution files (we'll keep the source files)
+bundle.js
+bundle.js.LICENSE.txt
+
+# Screenshots
+screenshots/
+
+# Documentation build files
+documentation/*.html/
+.npm/
+
+# Build outputs
+dist/
+build/
+.out/
+
+# Environment files
+.env*
+!.env.example
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+coverage/
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+*.debug.log
+*.dmp
+*.core
+
+# Webpack dev server
+*.hot-update.*
+
+# Local development files
+*.local
+
+# Screenshots
+screenshots/
+
+# Bundle files
+bundle.js
+bundle.js.LICENSE.txt
+
+# Documentation build files
+documentation/*.html
+documentation/build/
+
+# MCP logs
+logs/
+*.log.*
+
+# Package lock files
+package-lock.json
+yarn.lock

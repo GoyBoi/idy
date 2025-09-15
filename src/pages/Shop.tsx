@@ -1,5 +1,8 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { useCart } from '@/context/CartContext';
+import { useWishlist } from '@/context/WishlistContext';
+import { Link } from 'react-router-dom';
 
 export function Shop() {
   // Sample product data
@@ -48,6 +51,27 @@ export function Shop() {
     }
   ];
 
+  const { addToCart } = useCart();
+  const { addToWishlist, isInWishlist } = useWishlist();
+
+  const handleAddToCart = (product: typeof products[0]) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+  };
+
+  const handleToggleWishlist = (product: typeof products[0]) => {
+    addToWishlist({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+  };
+
   return (
     <div className="bg-black text-white py-12">
       <div className="container mx-auto px-4">
@@ -59,29 +83,41 @@ export function Shop() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.map((product) => (
             <Card key={product.id} className="p-4 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645]">
-              <div className="aspect-[4/5] w-full mx-auto">
-                <img 
-                  src={product.image} 
-                  alt={`${product.name} - ${product.description}`} 
-                  className="object-cover rounded-lg w-full h-full" 
-                />
-              </div>
+              <Link to={`/product/${product.id}`} className="block">
+                <div className="aspect-[4/5] w-full mx-auto">
+                  <img 
+                    src={product.image} 
+                    alt={`${product.name} - ${product.description}`} 
+                    className="object-cover rounded-lg w-full h-full" 
+                  />
+                </div>
+              </Link>
               <CardHeader className="p-0 mt-2">
-                <CardTitle className="text-sm font-bold text-white font-merienda mt-2">{product.name}</CardTitle>
+                <CardTitle className="text-sm font-bold text-white font-merienda mt-2">
+                  <Link to={`/product/${product.id}`} className="hover:text-teal-500 transition-colors">
+                    {product.name}
+                  </Link>
+                </CardTitle>
                 <CardDescription className="text-xs text-white/80 font-merienda mb-2">{product.description}</CardDescription>
               </CardHeader>
               <CardContent className="p-0 mt-2">
                 <span className="text-sm font-bold text-white font-merienda">${product.price.toFixed(2)}</span>
               </CardContent>
-              <CardFooter className="p-0 mt-2">
+              <CardFooter className="p-0 mt-2 flex justify-between">
                 <button 
+                  onClick={() => handleAddToCart(product)}
                   className="add-to-cart-btn p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300" 
-                  data-product-id={product.id} 
-                  data-product-name={product.name} 
-                  data-price={product.price}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                </button>
+                <button 
+                  onClick={() => handleToggleWishlist(product)}
+                  className={`wishlist-btn p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : ''}`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill={isInWishlist(product.id) ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </button>
               </CardFooter>

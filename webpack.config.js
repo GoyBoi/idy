@@ -44,15 +44,24 @@ module.exports = (env, argv) => {
       ],
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
       },
+      fallback: {
+        "buffer": false,
+        "crypto": false,
+        "events": false,
+        "path": false,
+        "stream": false,
+        "string_decoder": false,
+      }
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
         filename: 'index.html',
+        inject: 'body',
       }),
       new CopyWebpackPlugin({
         patterns: [
@@ -70,9 +79,14 @@ module.exports = (env, argv) => {
         directory: path.join(__dirname, 'dist'),
       },
       compress: true,
-      port: 3000,
+      port: 3001,
       open: true,
       historyApiFallback: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      }
     },
   };
 };

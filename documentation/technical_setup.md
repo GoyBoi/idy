@@ -207,9 +207,14 @@ module.exports = (env, argv) => {
         directory: path.join(__dirname, 'dist'),
       },
       compress: true,
-      port: 3000,
+      port: 3001,
       open: true,
       historyApiFallback: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      }
     },
   };
 };
@@ -379,9 +384,21 @@ Fonts are loaded from Google Fonts via CDN in `index.html`:
 - Ensure navigation links use `Link` component from `react-router-dom`
 
 ### 4. Development Server Problems
-- Check that port 3000 is available
+- Check that port 3001 is available (project recently changed from port 3000)
 - Verify webpack dev server configuration
 - Clear browser cache if experiencing issues
+
+### 5. LocalStorage Corruption Issues
+- Application crashes with "reduce is not a function" errors
+- Corrupted data in localStorage causing type mismatches
+- Clear localStorage when encountering persistent state issues:
+  ```javascript
+  // In browser console
+  localStorage.removeItem('cart');
+  localStorage.removeItem('wishlist');
+  location.reload();
+  ```
+- Implementation includes validation to prevent crashes from malformed data
 
 ## Performance Considerations
 

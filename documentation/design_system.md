@@ -296,5 +296,29 @@ Tailwind CSS default breakpoints:
 3. **Focus**: Visible indicator for keyboard navigation
 4. **Loading**: Indicators for asynchronous operations
 5. **Error**: Clear messaging for form validation
+6. **Application Errors**: Global error notifications for critical failures
+7. **Data Corruption Recovery**: Graceful handling of corrupted persisted data
+
+## Error Handling Patterns
+
+### Application-Level Errors
+- **Global Error Boundaries**: Wrap main application components to catch unhandled errors
+- **User-Friendly Error Messages**: Display clear, non-technical error messages to users
+- **Error Logging**: Log detailed error information to console for developers
+
+### Data Persistence Errors
+- **LocalStorage Validation**: Always validate data retrieved from localStorage
+- **Graceful Degradation**: Fall back to default values when stored data is corrupt
+- **Automatic Recovery**: Clear problematic data and notify users when necessary
+
+### Network Errors
+- **Offline Handling**: Provide clear messaging when network requests fail
+- **Retry Mechanisms**: Implement retry logic for transient network issues
+- **Loading States**: Show appropriate loading indicators during network operations
+
+### Form Validation Errors
+- **Real-time Validation**: Validate form inputs as users interact with them
+- **Clear Error Messaging**: Display specific error messages near problematic fields
+- **Visual Indicators**: Highlight invalid fields with appropriate styling
 
 This design system documentation ensures consistent implementation of the Mmwafrika Store visual identity across all components and pages. All UI development should reference these guidelines to maintain brand coherence and user experience quality.

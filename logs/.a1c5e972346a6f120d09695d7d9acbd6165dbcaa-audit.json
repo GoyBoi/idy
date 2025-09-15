@@ -14,6 +14,16 @@
             "date": 1757715794482,
             "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-13.log",
             "hash": "378ad915b5413d6cbdc5d6bce30262a3a6562c837d5f524f16d220f4c88c5e9e"
+        },
+        {
+            "date": 1757806425709,
+            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-14.log",
+            "hash": "3ab362032dc7354435aee5a8c11a4d95613e13b7dd492738ebd1396c6840915d"
+        },
+        {
+            "date": 1757979041694,
+            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-16.log",
+            "hash": "5475e93d9ba1b181fef42be5d043b329dd3722203dfc33976b40d61e0c48116a"
         }
     ],
     "hashType": "sha256"

@@ -89,6 +89,46 @@ src/
 - Created distinct pages for each section
 - Moved community features to a dedicated Community page
 
+### 5. LocalStorage Corruption Causing Application Crash
+**Problem:** Application was crashing with "cart.reduce is not a function" error, resulting in blank pages across all browsers.
+
+**Root Cause:** Corrupted or incorrectly formatted data stored in localStorage for cart and wishlist. When initializing state from localStorage, the code expected an array but received other data types, causing the `reduce` method to fail.
+
+**Resolution:**
+- Added validation in CartContext and WishlistContext to check if parsed localStorage data is actually an array
+- Default to empty array if the data is not an array, preventing the crash
+- Maintained the same structure so existing functionality remains intact
+- Cleared corrupted localStorage data to prevent recurrence
+
+```typescript
+// Before
+const [cart, setCart] = useState<CartItem[]>(() => {
+  try {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  } catch (error) {
+    console.error('Error parsing cart from localStorage:', error);
+    return [];
+  }
+});
+
+// After
+const [cart, setCart] = useState<CartItem[]>(() => {
+  try {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      const parsedCart = JSON.parse(savedCart);
+      // Ensure parsedCart is an array
+      return Array.isArray(parsedCart) ? parsedCart : [];
+    }
+    return [];
+  } catch (error) {
+    console.error('Error parsing cart from localStorage:', error);
+    return [];
+  }
+});
+```
+
 ## Features Implemented
 
 ### 1. Multi-Page Architecture
