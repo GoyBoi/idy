@@ -87,6 +87,15 @@ When writing tests, follow these guidelines:
 7. Test error handling for corrupted data
 8. Mock loading states for components with asynchronous operations
 
+## Recent Updates
+
+### UI Component Improvements
+- Updated add to cart functionality from icon buttons to text buttons for better clarity and accessibility
+- Centered text alignment in promotional sections for improved visual presentation
+- Centered "Explore Collection" buttons in collections cards for better visual balance
+- Centered text alignment in all product cards across all pages for consistent UI
+- Maintained all existing functionality while enhancing user experience
+
 ## Future Improvements
 
 1. Add tests for components (Navbar, CartIcon, etc.)

@@ -165,6 +165,10 @@ The frontend application is fully functional with:
 - Distinct content for each page section
 - Working navigation system
 - Build process configured correctly
+- Improved UI with button-based add to cart functionality
+- Centered text alignment in promotional sections
+- Centered "Explore Collection" buttons in collections cards
+- Centered text alignment in all product cards across all pages
 
 ## Next Steps
 
@@ -182,6 +186,7 @@ The frontend application is fully functional with:
 - ✅ Added item quantity management
 - ✅ Created cart persistence with localStorage
 - ✅ Added error handling for corrupted localStorage data
+- ✅ Updated UI components from icons to buttons for better UX
 
 ### 2. Enhanced Product Features
 **Priority:** High

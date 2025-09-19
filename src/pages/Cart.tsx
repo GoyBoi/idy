@@ -46,12 +46,12 @@ export function Cart() {
                         />
                       </div>
                       <div className="flex-grow">
-                        <CardHeader className="p-0">
+                        <CardHeader className="p-0 text-center">
                           <CardTitle className="text-lg font-bold text-white font-merienda">{item.name}</CardTitle>
                         </CardHeader>
-                        <CardContent className="p-0 my-4">
+                        <CardContent className="p-0 my-4 text-center">
                           <p className="text-sm font-merienda text-white/80 mb-2">${item.price.toFixed(2)}</p>
-                          <div className="flex items-center space-x-4">
+                          <div className="flex items-center justify-center space-x-4">
                             <button 
                               onClick={() => handleUpdateQuantity(item.id, item.quantity - 1)}
                               disabled={updatingItemId === item.id}

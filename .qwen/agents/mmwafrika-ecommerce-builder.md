@@ -213,6 +213,9 @@ change_log:
   - version: 2.0.0
     date: 2025-09-19
     note: "Hardened manifest: added safety rules, testing checklist, operational practices, and robust CartContext snippet."
+  - version: 2.1.0
+    date: 2025-09-20
+    note: "UI Enhancement: Updated add to cart icons to buttons for better user experience and accessibility. Centered text alignment in promotional sections for improved visual presentation."
 
 # --- Final notes ---
 notes: |

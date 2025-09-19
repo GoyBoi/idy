@@ -49,11 +49,11 @@ export function Wishlist() {
                     className="object-cover rounded-lg w-full h-full" 
                   />
                 </div>
-                <CardHeader className="p-0 mt-2">
+                <CardHeader className="p-0 mt-2 text-center">
                   <CardTitle className="text-sm font-bold text-white font-merienda mt-2">{item.name}</CardTitle>
                   <CardDescription className="text-xs text-white/80 font-merienda mb-2">${item.price.toFixed(2)}</CardDescription>
                 </CardHeader>
-                <CardContent className="p-0 mt-2">
+                <CardContent className="p-0 mt-2 text-center">
                   <span className="text-sm font-bold text-white font-merienda">${item.price.toFixed(2)}</span>
                 </CardContent>
                 <CardFooter className="p-0 mt-2 flex flex-col gap-2">

@@ -88,3 +88,12 @@ The current tests cover the core functionality of the components and contexts. F
 5. Adding end-to-end tests with Cypress or Puppeteer
 6. Adding code coverage reporting
 7. Adding accessibility tests
+
+## Recent Updates
+
+### UI Component Updates
+- Updated add to cart functionality from icons to buttons for better user experience
+- Centered text alignment in promotional sections for improved visual hierarchy
+- Centered "Explore Collection" buttons in collections cards for better visual balance
+- Centered text alignment in all product cards across all pages for consistent UI
+- Maintained all existing functionality while enhancing UI aesthetics

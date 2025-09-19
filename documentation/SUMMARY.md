@@ -108,6 +108,13 @@ The Mmwafrika Store e-commerce frontend has been successfully developed as a mod
 2. **Development Server Port Change**: Changed default development port from 3000 to 3001 to avoid conflicts
 3. **CORS Header Configuration**: Added proper CORS headers to development server to improve cross-browser compatibility
 
+### UI/UX Improvements
+1. **Add to Cart Button Enhancement**: Updated add to cart functionality from icon buttons to text buttons for better clarity and accessibility
+2. **Text Alignment Optimization**: Centered text alignment in promotional sections for improved visual presentation
+3. **Button Alignment Improvements**: Centered "Explore Collection" buttons in collections cards for better visual balance
+4. **Product Card Text Alignment**: Centered text alignment in all product cards across all pages for consistent UI
+5. **Loading States Implementation**: Added loading indicators throughout the application to improve user experience during asynchronous operations
+
 ### Feature Enhancements
 1. **Loading States Implementation**: Added loading indicators throughout the application to improve user experience during asynchronous operations
 

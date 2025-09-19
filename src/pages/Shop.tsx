@@ -112,7 +112,7 @@ export function Shop() {
                     />
                   </div>
                 </Link>
-                <CardHeader className="p-0 mt-2">
+                <CardHeader className="p-0 mt-2 text-center">
                   <CardTitle className="text-sm font-bold text-white font-merienda mt-2">
                     <Link to={`/product/${product.id}`} className="hover:text-teal-500 transition-colors">
                       {product.name}
@@ -120,17 +120,15 @@ export function Shop() {
                   </CardTitle>
                   <CardDescription className="text-xs text-white/80 font-merienda mb-2">{product.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="p-0 mt-2">
+                <CardContent className="p-0 mt-2 text-center">
                   <span className="text-sm font-bold text-white font-merienda">${product.price.toFixed(2)}</span>
                 </CardContent>
                 <CardFooter className="p-0 mt-2 flex justify-between">
                   <button 
                     onClick={() => handleAddToCart(product)}
-                    className="add-to-cart-btn p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300" 
+                    className="px-4 py-2 rounded-lg font-semibold text-white bg-teal-500 hover:bg-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#234645] font-merienda"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
+                    Add to Cart
                   </button>
                   <button 
                     onClick={() => handleToggleWishlist(product)}

@@ -88,8 +88,8 @@ The Mmwafrika Store follows a minimalist aesthetic with a focus on showcasing Af
     <span className="text-sm font-bold text-white font-merienda">${product.price.toFixed(2)}</span>
   </CardContent>
   <CardFooter className="p-0 mt-2">
-    <button className="add-to-cart-btn p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300">
-      <svg>...</svg>
+    <button className="px-4 py-2 rounded-lg font-semibold text-white bg-teal-500 hover:bg-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#234645] font-merienda">
+      Add to Cart
     </button>
   </CardFooter>
 </Card>
@@ -101,14 +101,14 @@ The Mmwafrika Store follows a minimalist aesthetic with a focus on showcasing Af
   <div className="aspect-video w-full mx-auto mb-6">
     <img src={collection.image} alt={collection.name} className="object-cover rounded-lg w-full h-full" />
   </div>
-  <CardHeader className="p-0">
+  <CardHeader className="p-0 text-center">
     <CardTitle className="text-2xl font-bold text-white font-sans mb-2">{collection.name}</CardTitle>
     <CardDescription className="text-lg text-white/80 font-merienda mb-4">{collection.description}</CardDescription>
   </CardHeader>
-  <CardContent className="p-0 mb-4">
+  <CardContent className="p-0 mb-4 text-center">
     <span className="text-sm text-white/70 font-merienda">{collection.itemCount} items</span>
   </CardContent>
-  <CardFooter className="p-0">
+  <CardFooter className="p-0 flex justify-center">
     <button className="px-6 py-2 rounded-lg font-semibold text-white bg-teal-500 hover:bg-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#234645] font-merienda">
       Explore Collection
     </button>
