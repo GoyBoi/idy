@@ -102,14 +102,25 @@ export function Shop() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {products.map((product) => (
-              <Card key={product.id} className="p-4 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645]">
+              <Card key={product.id} className="p-4 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645] relative">
                 <Link to={`/product/${product.id}`} className="block">
-                  <div className="aspect-[4/5] w-full mx-auto">
+                  <div className="aspect-[4/5] w-full mx-auto relative">
                     <img 
                       src={product.image} 
                       alt={`${product.name} - ${product.description}`} 
                       className="object-cover rounded-lg w-full h-full" 
                     />
+                    <button 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleToggleWishlist(product);
+                      }}
+                      className={`wishlist-btn absolute top-2 right-2 p-2 rounded-full bg-black/30 backdrop-blur-md border border-white/30 shadow-lg text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : 'text-white'}`}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill={isInWishlist(product.id) ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
                   </div>
                 </Link>
                 <CardHeader className="p-0 mt-2 text-center">
@@ -123,20 +134,12 @@ export function Shop() {
                 <CardContent className="p-0 mt-2 text-center">
                   <span className="text-sm font-bold text-white font-merienda">${product.price.toFixed(2)}</span>
                 </CardContent>
-                <CardFooter className="p-0 mt-2 flex justify-between">
+                <CardFooter className="p-0 mt-2">
                   <button 
                     onClick={() => handleAddToCart(product)}
-                    className="px-4 py-2 rounded-lg font-semibold text-white bg-teal-500 hover:bg-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#234645] font-merienda"
+                    className="w-full px-4 py-2 rounded-lg font-semibold text-white bg-teal-500 hover:bg-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#234645] font-merienda"
                   >
                     Add to Cart
-                  </button>
-                  <button 
-                    onClick={() => handleToggleWishlist(product)}
-                    className={`wishlist-btn p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : ''}`}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill={isInWishlist(product.id) ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
                   </button>
                 </CardFooter>
               </Card>

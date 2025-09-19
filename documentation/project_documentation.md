@@ -141,7 +141,7 @@ const [cart, setCart] = useState<CartItem[]>(() => {
 
 ### 2. Responsive Navigation
 - Desktop navigation menu
-- Mobile hamburger menu with toggle functionality
+- Mobile hamburger menu with full-screen glassmorphic overlay
 - Consistent branding across all viewports
 
 ### 3. Product Display System

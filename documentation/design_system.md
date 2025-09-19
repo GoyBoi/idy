@@ -191,13 +191,51 @@ The Mmwafrika Store follows a minimalist aesthetic with a focus on showcasing Af
   <svg>...</svg>
 </button>
 
-{/* Mobile Navigation Menu */}
+{/* Full-screen Mobile Navigation Overlay */}
 {isMenuOpen && (
-  <div className="md:hidden mt-4">
-    <div className="flex flex-col space-y-2">
-      <Link to="/" className="hover:text-teal-500 transition-colors py-2">Home</Link>
-      <Link to="/shop" className="hover:text-teal-500 transition-colors py-2">Shop</Link>
-      {/* ... other links */}
+  <div 
+    className="fixed inset-0 z-50 flex"
+    style={{ 
+      background: 'rgba(15, 23, 42, 0.8)',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)'
+    }}
+  >
+    {/* Menu content */}
+    <div className="flex flex-col w-full h-full p-6">
+      {/* Close button */}
+      <div className="flex justify-end">
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="p-2 rounded-full hover:bg-white/10 transition-colors"
+          aria-label="Close menu"
+        >
+          <X className="h-6 w-6 text-white" />
+        </button>
+      </div>
+      
+      {/* Navigation links */}
+      <div className="flex flex-col items-center justify-center flex-grow space-y-8">
+        <Link
+          to="/"
+          className="text-2xl font-medium text-white hover:text-teal-500 transition-colors py-2"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Home
+        </Link>
+        {/* ... other links */}
+      </div>
+      
+      {/* Contact information */}
+      <div className="flex flex-col items-center py-8 border-t border-white/20">
+        <div className="flex flex-col items-center space-y-2 text-sm text-white/80">
+          <div className="flex items-center">
+            <span className="mr-2">📞</span>
+            <span>Phone: 079 042 7032</span>
+          </div>
+          {/* ... other contact info */}
+        </div>
+      </div>
     </div>
   </div>
 )}
