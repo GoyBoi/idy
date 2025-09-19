@@ -248,6 +248,28 @@ Tailwind CSS default breakpoints:
 - **Outline**: focus:outline-none
 - **Offset**: focus:ring-offset-2
 
+### Loading Spinner
+
+#### Default Size
+```tsx
+<LoadingSpinner />
+```
+
+#### Small Size
+```tsx
+<LoadingSpinner size="sm" />
+```
+
+#### Large Size
+```tsx
+<LoadingSpinner size="lg" />
+```
+
+#### With Custom Classes
+```tsx
+<LoadingSpinner className="my-custom-class" />
+```
+
 ## Accessibility Guidelines
 
 ### Color Contrast

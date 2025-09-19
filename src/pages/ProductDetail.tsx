@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { Link, useParams } from 'react-router-dom';
+import { LoadingSpinner } from '@/components/LoadingSpinner';
 
 // Sample product data - in a real app this would come from an API
-const products = [
+const initialProducts = [
   {
     id: 1,
     name: "Handcrafted Necklace",
@@ -66,28 +67,76 @@ const products = [
 export function ProductDetail() {
   const { id } = useParams<{ id?: string }>();
   const productId = id ? parseInt(id, 10) : 1;
-  const product = products.find(p => p.id === productId) || products[0];
+  const [product, setProduct] = useState<typeof initialProducts[0] | null>(null);
+  const [loading, setLoading] = useState(true);
   
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist } = useWishlist();
 
+  // Simulate fetching product from an API
+  useEffect(() => {
+    const fetchProduct = async () => {
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 800));
+      const foundProduct = initialProducts.find(p => p.id === productId) || initialProducts[0];
+      setProduct(foundProduct);
+      setLoading(false);
+    };
+
+    fetchProduct();
+  }, [productId]);
+
   const handleAddToCart = () => {
-    addToCart({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image
-    });
+    if (product) {
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image
+      });
+    }
   };
 
   const handleToggleWishlist = () => {
-    addToWishlist({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image
-    });
+    if (product) {
+      addToWishlist({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image
+      });
+    }
   };
+
+  if (loading) {
+    return (
+      <div className="bg-black text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center items-center h-96">
+            <LoadingSpinner size="lg" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!product) {
+    return (
+      <div className="bg-black text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="text-center py-12">
+            <h1 className="text-4xl font-bold font-sans mb-8">Product Not Found</h1>
+            <p className="text-xl font-merienda mb-8">Sorry, we couldn't find the product you're looking for.</p>
+            <Link to="/shop">
+              <Button className="px-8 py-3 rounded-lg font-bold text-white bg-gradient-to-r from-teal-500 to-teal-600 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_#234645] font-merienda">
+                Continue Shopping
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-black text-white py-12">

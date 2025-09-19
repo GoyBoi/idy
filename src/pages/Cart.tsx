@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { Link } from 'react-router-dom';
+import { LoadingSpinner } from '@/components/LoadingSpinner';
 
 export function Cart() {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const [updatingItemId, setUpdatingItemId] = useState<number | null>(null);
+
+  const handleUpdateQuantity = async (itemId: number, quantity: number) => {
+    setUpdatingItemId(itemId);
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 300));
+    updateQuantity(itemId, quantity);
+    setUpdatingItemId(null);
+  };
 
   return (
     <div className="bg-black text-white py-12">
@@ -43,17 +53,27 @@ export function Cart() {
                           <p className="text-sm font-merienda text-white/80 mb-2">${item.price.toFixed(2)}</p>
                           <div className="flex items-center space-x-4">
                             <button 
-                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors"
+                              onClick={() => handleUpdateQuantity(item.id, item.quantity - 1)}
+                              disabled={updatingItemId === item.id}
+                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors disabled:opacity-50"
                             >
-                              -
+                              {updatingItemId === item.id ? (
+                                <LoadingSpinner size="sm" />
+                              ) : (
+                                <span>-</span>
+                              )}
                             </button>
                             <span className="text-white font-merienda">{item.quantity}</span>
                             <button 
-                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors"
+                              onClick={() => handleUpdateQuantity(item.id, item.quantity + 1)}
+                              disabled={updatingItemId === item.id}
+                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors disabled:opacity-50"
                             >
-                              +
+                              {updatingItemId === item.id ? (
+                                <LoadingSpinner size="sm" />
+                              ) : (
+                                <span>+</span>
+                              )}
                             </button>
                           </div>
                         </CardContent>

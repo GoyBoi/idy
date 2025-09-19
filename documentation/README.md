@@ -16,6 +16,14 @@ This folder contains comprehensive documentation for the Mmwafrika Store e-comme
 **File**: `design_system.md`
 **Purpose**: Guidelines for visual design, color system, typography, UI components, and accessibility standards.
 
+### 4. Testing
+**File**: `testing.md`
+**Purpose**: Information about the testing setup, how to run tests, and guidelines for writing tests.
+
+### 5. Component Testing
+**File**: `component_testing.md`
+**Purpose**: Detailed information about testing individual components and contexts.
+
 ## How to Use This Documentation
 
 1. **Project Overview**: Start with `project_documentation.md` to understand the overall project structure and progress.

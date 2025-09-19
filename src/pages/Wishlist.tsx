@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
 import { Link } from 'react-router-dom';
+import { LoadingSpinner } from '@/components/LoadingSpinner';
 
 export function Wishlist() {
   const { wishlist, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
+  const [addingToCartId, setAddingToCartId] = useState<number | null>(null);
 
-  const handleAddToCart = (item: typeof wishlist[0]) => {
+  const handleAddToCart = async (item: typeof wishlist[0]) => {
+    setAddingToCartId(item.id);
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 500));
     addToCart({
       id: item.id,
       name: item.name,
       price: item.price,
       image: item.image
     });
-    
-    // Optionally remove from wishlist after adding to cart
-    // removeFromWishlist(item.id);
+    setAddingToCartId(null);
   };
 
   return (
@@ -56,9 +59,14 @@ export function Wishlist() {
                 <CardFooter className="p-0 mt-2 flex flex-col gap-2">
                   <button 
                     onClick={() => handleAddToCart(item)}
-                    className="add-to-cart-btn w-full py-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-white hover:scale-[1.02] hover:shadow-[0_0_15px_#234645] transition-all duration-300 font-merienda"
+                    disabled={addingToCartId === item.id}
+                    className="add-to-cart-btn w-full py-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 shadow-md text-white hover:scale-[1.02] hover:shadow-[0_0_15px_#234645] transition-all duration-300 font-merienda flex items-center justify-center disabled:opacity-50"
                   >
-                    Add to Cart
+                    {addingToCartId === item.id ? (
+                      <LoadingSpinner size="sm" />
+                    ) : (
+                      <span>Add to Cart</span>
+                    )}
                   </button>
                   <button 
                     onClick={() => removeFromWishlist(item.id)}
