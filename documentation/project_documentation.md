@@ -169,6 +169,9 @@ The frontend application is fully functional with:
 - Centered text alignment in promotional sections
 - Centered "Explore Collection" buttons in collections cards
 - Centered text alignment in all product cards across all pages
+- Updated hamburger menu with Shadcn UI Sheet component
+- Contact information in hamburger menu without labels (+27 79 042 7032, mmwafrika.prideclothing@gmail.com)
+- Consistent hamburger menu overlay across all small screens
 
 ## Next Steps
 

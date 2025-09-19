@@ -93,20 +93,21 @@ export function Navbar() {
                       rel="noopener noreferrer"
                     >
                       <MessageCircle className="h-5 w-5 mr-2" />
-                      WhatsApp: 079 042 7032
+                      +27 79 042 7032
                     </a>
                   </Button>
                   
                   <Button 
                     asChild 
                     variant="outline" 
-                    className="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 transition-colors text-white font-semibold"
+                    className="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 transition-colors text-white font-semibold flex items-center justify-center"
                   >
                     <a 
                       href="mailto:mmwafrika.prideclothing@gmail.com" 
+                      className="flex items-center"
                     >
                       <Mail className="h-5 w-5 mr-2" />
-                      Email: mmwafrika.prideclothing@gmail.com
+                      <span className="truncate">mmwafrika.prideclothing@gmail.com</span>
                     </a>
                   </Button>
                   

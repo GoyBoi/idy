@@ -184,60 +184,78 @@ The Mmwafrika Store follows a minimalist aesthetic with a focus on showcasing Af
 </nav>
 ```
 
-#### Mobile Navigation
+### Mobile Navigation
 ```tsx
 {/* Mobile menu button */}
 <button className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors" aria-label="Toggle Menu">
   <svg>...</svg>
 </button>
 
-{/* Full-screen Mobile Navigation Overlay */}
-{isMenuOpen && (
-  <div 
-    className="fixed inset-0 z-50 flex"
-    style={{ 
-      background: 'rgba(15, 23, 42, 0.8)',
-      backdropFilter: 'blur(12px)',
-      WebkitBackdropFilter: 'blur(12px)'
-    }}
-  >
-    {/* Menu content */}
-    <div className="flex flex-col w-full h-full p-6">
-      {/* Close button */}
-      <div className="flex justify-end">
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="p-2 rounded-full hover:bg-white/10 transition-colors"
-          aria-label="Close menu"
-        >
-          <X className="h-6 w-6 text-white" />
-        </button>
-      </div>
-      
-      {/* Navigation links */}
-      <div className="flex flex-col items-center justify-center flex-grow space-y-8">
-        <Link
-          to="/"
-          className="text-2xl font-medium text-white hover:text-teal-500 transition-colors py-2"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Home
-        </Link>
-        {/* ... other links */}
-      </div>
-      
-      {/* Contact information */}
-      <div className="flex flex-col items-center py-8 border-t border-white/20">
-        <div className="flex flex-col items-center space-y-2 text-sm text-white/80">
-          <div className="flex items-center">
-            <span className="mr-2">📞</span>
-            <span>Phone: 079 042 7032</span>
-          </div>
-          {/* ... other contact info */}
+{/* Mobile Navigation Menu with Shadcn Sheet */}
+{isOpen && (
+  <Sheet open={isOpen} onOpenChange={setIsOpen}>
+    <SheetContent side="left" className="w-3/4 sm:max-w-sm bg-black border-r border-white/20">
+      <SheetHeader>
+        <SheetTitle className="text-white">Menu</SheetTitle>
+      </SheetHeader>
+      <div className="flex flex-col items-center justify-between h-full py-8">
+        <div className="flex flex-col items-center space-y-6">
+          <Link
+            to="/"
+            className="text-xl font-medium text-white hover:text-teal-500 transition-colors py-2"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          {/* ... other navigation links */}
+        </div>
+        
+        {/* Contact information without labels */}
+        <div className="flex flex-col space-y-3 w-full px-4">
+          <Button 
+            asChild 
+            className="w-full py-4 rounded-lg bg-green-600 hover:bg-green-700 transition-colors text-white font-semibold"
+          >
+            <a 
+              href="https://wa.me/27790427032" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="h-5 w-5 mr-2" />
+              +27 79 042 7032
+            </a>
+          </Button>
+          
+          <Button 
+            asChild 
+            variant="outline" 
+            className="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 transition-colors text-white font-semibold"
+          >
+            <a 
+              href="mailto:mmwafrika.prideclothing@gmail.com" 
+            >
+              <Mail className="h-5 w-5 mr-2" />
+              mmwafrika.prideclothing@gmail.com
+            </a>
+          </Button>
+          
+          <Button 
+            asChild 
+            className="w-full py-4 rounded-lg bg-teal-600 hover:bg-teal-700 transition-colors text-white font-semibold mt-2"
+          >
+            <a 
+              href="https://wa.me/27790427032" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <ShoppingBag className="h-5 w-5 mr-2" />
+              Order via WhatsApp
+            </a>
+          </Button>
         </div>
       </div>
-    </div>
-  </div>
+    </SheetContent>
+  </Sheet>
 )}
 ```
 

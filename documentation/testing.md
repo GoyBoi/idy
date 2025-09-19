@@ -94,7 +94,9 @@ When writing tests, follow these guidelines:
 - Centered text alignment in promotional sections for improved visual presentation
 - Centered "Explore Collection" buttons in collections cards for better visual balance
 - Centered text alignment in all product cards across all pages for consistent UI
-- Maintained all existing functionality while enhancing user experience
+- Updated hamburger menu to use Shadcn UI Sheet component for improved mobile experience
+- Removed labels from contact information in hamburger menu for cleaner UI
+- Ensured hamburger menu overlay consistency across all small screens
 
 ## Future Improvements
 

@@ -96,4 +96,6 @@ The current tests cover the core functionality of the components and contexts. F
 - Centered text alignment in promotional sections for improved visual hierarchy
 - Centered "Explore Collection" buttons in collections cards for better visual balance
 - Centered text alignment in all product cards across all pages for consistent UI
-- Maintained all existing functionality while enhancing UI aesthetics
+- Updated hamburger menu to use Shadcn UI Sheet component for improved mobile experience
+- Removed labels from contact information in hamburger menu for cleaner UI
+- Ensured hamburger menu overlay consistency across all small screens
