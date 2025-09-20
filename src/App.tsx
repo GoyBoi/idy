@@ -15,6 +15,7 @@ import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import { Confirmation } from './components/Confirmation';
 import { useCart } from './context/CartContext';
+import { ThemeProvider } from './components/ThemeProvider';
 
 function ConfirmationWrapper() {
   const { confirmation, hideConfirmation } = useCart();
@@ -34,28 +35,30 @@ function ConfirmationWrapper() {
 function App() {
   return (
     <Router>
-      <WishlistProvider>
-        <CartProvider>
-          <div className="bg-black text-white min-h-screen flex flex-col">
-            <Navbar />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/collections" element={<Collections />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/community" element={<Community />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/wishlist" element={<Wishlist />} />
-                <Route path="/product/:id" element={<ProductDetail />} />
-              </Routes>
-            </main>
-            <Footer />
-            <ConfirmationWrapper />
-          </div>
-        </CartProvider>
-      </WishlistProvider>
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <WishlistProvider>
+          <CartProvider>
+            <div className="bg-background text-foreground min-h-screen flex flex-col">
+              <Navbar />
+              <main className="flex-grow">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/shop" element={<Shop />} />
+                  <Route path="/collections" element={<Collections />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/community" element={<Community />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/wishlist" element={<Wishlist />} />
+                  <Route path="/product/:id" element={<ProductDetail />} />
+                </Routes>
+              </main>
+              <Footer />
+              <ConfirmationWrapper />
+            </div>
+          </CartProvider>
+        </WishlistProvider>
+      </ThemeProvider>
     </Router>
   );
 }

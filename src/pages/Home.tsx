@@ -126,21 +126,21 @@ export function Home() {
   };
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-background text-foreground">
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[80vh] flex flex-col items-center justify-center overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 bg-gray-800">
           {/* Placeholder for hero image */}
-          <div className="w-full h-full bg-gradient-to-r from-teal-500/20 to-black/50"></div>
+          <div className="w-full h-full bg-gradient-to-r from-teal-500/20 to-background/50"></div>
         </div>
         
         {/* Overlay content */}
         <div className="relative z-10 text-center px-4 flex flex-col items-center justify-center h-full">
-          <h1 className="text-4xl md:text-6xl font-bold font-sans text-white text-center px-4 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold font-sans text-foreground text-center px-4 mb-6 drop-shadow-md">
             Discover Unique African Fashion
           </h1>
-          <p className="text-xl md:text-2xl font-merienda text-white mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl font-merienda text-foreground mb-8 max-w-2xl mx-auto drop-shadow-md">
             Explore our curated collection of authentic African-inspired clothing and accessories
           </p>
           <Button 
@@ -171,7 +171,7 @@ export function Home() {
         <h2 className="text-3xl font-semibold font-sans mb-8 text-center">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {featuredProducts.map((product) => (
-            <Card key={product.id} className="p-4 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645] relative">
+            <Card key={product.id} className="p-4 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645] relative">
               <Link to={`/product/${product.id}`} className="block">
                 <div className="aspect-[4/5] w-full mx-auto relative">
                   <img src={product.image} alt={`${product.name} - ${product.description}`} className="object-cover rounded-lg w-full h-full" />
@@ -180,7 +180,7 @@ export function Home() {
                       e.preventDefault();
                       handleToggleWishlist(product);
                     }}
-                    className={`wishlist-btn absolute top-2 right-2 p-2 rounded-full bg-black/30 backdrop-blur-md border border-white/30 shadow-lg text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : 'text-white'}`}
+                    className={`wishlist-btn absolute top-2 right-2 p-2 rounded-full bg-background/30 backdrop-blur-md border border-border/30 shadow-lg text-foreground hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : 'text-foreground'}`}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill={isInWishlist(product.id) ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -189,15 +189,15 @@ export function Home() {
                 </div>
               </Link>
               <CardHeader className="p-0 mt-2 text-center">
-                <CardTitle className="text-sm font-bold text-white font-merienda mt-2">
+                <CardTitle className="text-sm font-bold text-foreground font-merienda mt-2">
                   <Link to={`/product/${product.id}`} className="hover:text-teal-500 transition-colors">
                     {product.name}
                   </Link>
                 </CardTitle>
-                <CardDescription className="text-xs text-white/80 font-merienda mb-2">{product.description}</CardDescription>
+                <CardDescription className="text-xs text-foreground/80 font-merienda mb-2">{product.description}</CardDescription>
               </CardHeader>
               <CardContent className="p-0 mt-2 text-center">
-                <span className="text-sm font-bold text-white font-merienda">${product.price.toFixed(2)}</span>
+                <span className="text-sm font-bold text-foreground font-merienda">${product.price.toFixed(2)}</span>
               </CardContent>
               <CardFooter className="p-0 mt-2">
                 <Button 
@@ -217,13 +217,13 @@ export function Home() {
         <h2 className="text-3xl font-semibold font-sans mb-8 text-center">Special Offers</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {promotions.map((promo) => (
-            <Card key={promo.id} className="p-6 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645]">
+            <Card key={promo.id} className="p-6 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645]">
               <div className="aspect-video w-full mx-auto mb-4">
                 <img src={promo.image} alt={promo.title} className="object-cover rounded-lg w-full h-full" />
               </div>
               <CardHeader className="p-0 text-center">
                 <CardTitle className="text-2xl font-bold font-sans mb-2">{promo.title}</CardTitle>
-                <CardDescription className="text-lg text-white/80 font-merienda mb-4">{promo.description}</CardDescription>
+                <CardDescription className="text-lg text-foreground/80 font-merienda mb-4">{promo.description}</CardDescription>
               </CardHeader>
               <CardFooter className="p-0 flex justify-center">
                 <Button 
@@ -243,7 +243,7 @@ export function Home() {
         <h2 className="text-3xl font-semibold font-sans mb-8 text-center">#MmwafrikaCommunity</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {communityPosts.map((post) => (
-            <div key={post.id} className="rounded-xl overflow-hidden bg-white/10 backdrop-blur-md shadow-lg border border-white/20">
+            <div key={post.id} className="rounded-xl overflow-hidden bg-card/10 backdrop-blur-md shadow-lg border border-border">
               <div className="aspect-square w-full">
                 <img src={post.image} alt={post.username} className="object-cover w-full h-full" />
               </div>
@@ -254,7 +254,7 @@ export function Home() {
                   </div>
                   <span className="font-semibold font-merienda">{post.username}</span>
                 </div>
-                <p className="font-merienda text-white/90">{post.caption}</p>
+                <p className="font-merienda text-foreground/90">{post.caption}</p>
               </div>
             </div>
           ))}
@@ -266,18 +266,18 @@ export function Home() {
         <h2 className="text-3xl font-semibold font-sans mb-8 text-center">What Our Customers Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="p-6 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20">
+            <Card key={testimonial.id} className="p-6 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center mr-4">
                   <span className="font-semibold">{testimonial.avatar}</span>
                 </div>
                 <div>
                   <CardTitle className="text-lg font-bold font-sans">{testimonial.name}</CardTitle>
-                  <CardDescription className="text-white/80 font-merienda">{testimonial.role}</CardDescription>
+                  <CardDescription className="text-foreground/80 font-merienda">{testimonial.role}</CardDescription>
                 </div>
               </div>
               <CardContent className="p-0">
-                <p className="font-merienda text-white/90 italic">"{testimonial.content}"</p>
+                <p className="font-merienda text-foreground/90 italic">"{testimonial.content}"</p>
               </CardContent>
             </Card>
           ))}
@@ -286,10 +286,10 @@ export function Home() {
       
       {/* Newsletter Signup */}
       <section className="container mx-auto px-4 py-12">
-        <Card className="p-8 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 text-center">
+        <Card className="p-8 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border text-center">
           <CardHeader className="p-0 mb-6">
             <CardTitle className="text-3xl font-bold font-sans mb-2">Join Our Newsletter</CardTitle>
-            <CardDescription className="text-xl text-white/80 font-merienda">
+            <CardDescription className="text-xl text-foreground/80 font-merienda">
               Stay updated with our latest collections and exclusive offers
             </CardDescription>
           </CardHeader>
@@ -301,7 +301,7 @@ export function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
-                  className="flex-grow px-4 py-3 bg-black/20 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-white placeholder-white/50"
+                  className="flex-grow px-4 py-3 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground placeholder-foreground/50"
                   required
                 />
                 <Button 

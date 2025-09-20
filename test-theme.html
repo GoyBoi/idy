@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Test</title>
+    <script>
+        // Check current theme
+        const storedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        
+        console.log('Current theme:', theme);
+        console.log('Stored theme:', storedTheme);
+        console.log('System prefers dark:', systemPrefersDark);
+        console.log('HTML classes:', document.documentElement.classList);
+    </script>
+</head>
+<body>
+    <h1>Theme Test</h1>
+    <p>Check the console for theme information</p>
+</body>
+</html>

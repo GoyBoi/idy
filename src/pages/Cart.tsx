@@ -18,7 +18,7 @@ export function Cart() {
   };
 
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold font-sans mb-8 text-center">Your Shopping Cart</h1>
         
@@ -36,7 +36,7 @@ export function Cart() {
             <div className="lg:col-span-2">
               <div className="space-y-6">
                 {cart.map((item) => (
-                  <Card key={item.id} className="p-6 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20">
+                  <Card key={item.id} className="p-6 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border">
                     <div className="flex flex-col sm:flex-row gap-6">
                       <div className="aspect-[4/5] w-32 mx-auto sm:mx-0">
                         <img 
@@ -47,15 +47,15 @@ export function Cart() {
                       </div>
                       <div className="flex-grow">
                         <CardHeader className="p-0 text-center">
-                          <CardTitle className="text-lg font-bold text-white font-merienda">{item.name}</CardTitle>
+                          <CardTitle className="text-lg font-bold text-foreground font-merienda">{item.name}</CardTitle>
                         </CardHeader>
                         <CardContent className="p-0 my-4 text-center">
-                          <p className="text-sm font-merienda text-white/80 mb-2">${item.price.toFixed(2)}</p>
+                          <p className="text-sm font-merienda text-foreground/80 mb-2">${item.price.toFixed(2)}</p>
                           <div className="flex items-center justify-center space-x-4">
                             <button 
                               onClick={() => handleUpdateQuantity(item.id, item.quantity - 1)}
                               disabled={updatingItemId === item.id}
-                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors disabled:opacity-50"
+                              className="w-8 h-8 rounded-full bg-card/10 backdrop-blur-md border border-border flex items-center justify-center hover:bg-card/20 transition-colors disabled:opacity-50"
                             >
                               {updatingItemId === item.id ? (
                                 <LoadingSpinner size="sm" />
@@ -63,11 +63,11 @@ export function Cart() {
                                 <span>-</span>
                               )}
                             </button>
-                            <span className="text-white font-merienda">{item.quantity}</span>
+                            <span className="text-foreground font-merienda">{item.quantity}</span>
                             <button 
                               onClick={() => handleUpdateQuantity(item.id, item.quantity + 1)}
                               disabled={updatingItemId === item.id}
-                              className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors disabled:opacity-50"
+                              className="w-8 h-8 rounded-full bg-card/10 backdrop-blur-md border border-border flex items-center justify-center hover:bg-card/20 transition-colors disabled:opacity-50"
                             >
                               {updatingItemId === item.id ? (
                                 <LoadingSpinner size="sm" />
@@ -78,7 +78,7 @@ export function Cart() {
                           </div>
                         </CardContent>
                         <CardFooter className="p-0 flex justify-between items-center">
-                          <span className="text-lg font-bold text-white font-merienda">
+                          <span className="text-lg font-bold text-foreground font-merienda">
                             ${(item.price * item.quantity).toFixed(2)}
                           </span>
                           <button 
@@ -96,28 +96,28 @@ export function Cart() {
             </div>
             
             <div>
-              <Card className="p-6 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20">
+              <Card className="p-6 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border">
                 <CardHeader className="p-0 mb-6">
-                  <CardTitle className="text-2xl font-bold text-white font-sans">Order Summary</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-foreground font-sans">Order Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="space-y-4">
                     <div className="flex justify-between">
-                      <span className="font-merienda text-white/80">Subtotal</span>
-                      <span className="font-merienda text-white">${cartTotal.toFixed(2)}</span>
+                      <span className="font-merienda text-foreground/80">Subtotal</span>
+                      <span className="font-merienda text-foreground">${cartTotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-merienda text-white/80">Shipping</span>
-                      <span className="font-merienda text-white">Free</span>
+                      <span className="font-merienda text-foreground/80">Shipping</span>
+                      <span className="font-merienda text-foreground">Free</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-merienda text-white/80">Tax</span>
-                      <span className="font-merienda text-white">$0.00</span>
+                      <span className="font-merienda text-foreground/80">Tax</span>
+                      <span className="font-merienda text-foreground">$0.00</span>
                     </div>
-                    <div className="border-t border-white/20 pt-4">
+                    <div className="border-t border-border pt-4">
                       <div className="flex justify-between">
-                        <span className="font-bold text-lg text-white font-sans">Total</span>
-                        <span className="font-bold text-lg text-white font-sans">${cartTotal.toFixed(2)}</span>
+                        <span className="font-bold text-lg text-foreground font-sans">Total</span>
+                        <span className="font-bold text-lg text-foreground font-sans">${cartTotal.toFixed(2)}</span>
                       </div>
                     </div>
                   </div>

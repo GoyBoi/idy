@@ -53,46 +53,46 @@ export function Community() {
   };
 
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold font-sans mb-2 text-center">Community</h1>
-        <p className="text-xl font-merienda text-white/80 mb-12 text-center max-w-2xl mx-auto">
+        <p className="text-xl font-merienda text-foreground/80 mb-12 text-center max-w-2xl mx-auto">
           Join our community of fashion enthusiasts and share your experiences
         </p>
         
         <div className="max-w-4xl mx-auto">
           {/* Community Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
+            <div className="bg-card/10 backdrop-blur-md rounded-xl p-6 text-center border border-border">
               <div className="text-3xl font-bold text-teal-500 mb-2">12.5K</div>
-              <div className="font-merienda text-white/80">Community Members</div>
+              <div className="font-merienda text-foreground/80">Community Members</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
+            <div className="bg-card/10 backdrop-blur-md rounded-xl p-6 text-center border border-border">
               <div className="text-3xl font-bold text-teal-500 mb-2">8.7K</div>
-              <div className="font-merienda text-white/80">Product Reviews</div>
+              <div className="font-merienda text-foreground/80">Product Reviews</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
+            <div className="bg-card/10 backdrop-blur-md rounded-xl p-6 text-center border border-border">
               <div className="text-3xl font-bold text-teal-500 mb-2">94%</div>
-              <div className="font-merienda text-white/80">Satisfaction Rate</div>
+              <div className="font-merienda text-foreground/80">Satisfaction Rate</div>
             </div>
           </div>
           
           {/* Leave a Review */}
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-12 border border-white/20">
+          <div className="bg-card/10 backdrop-blur-md rounded-xl p-6 mb-12 border border-border">
             <h2 className="text-2xl font-bold font-sans mb-6">Share Your Experience</h2>
             <form className="space-y-6">
               <div>
-                <Label htmlFor="review-name" className="block text-sm font-medium text-white mb-1">Name</Label>
+                <Label htmlFor="review-name" className="block text-sm font-medium text-foreground mb-1">Name</Label>
                 <Input 
                   type="text" 
                   id="review-name" 
-                  className="w-full px-3 py-2 bg-black/20 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-white" 
+                  className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
                   placeholder="Your name" 
                 />
               </div>
               
               <div>
-                <Label className="block text-sm font-medium text-white mb-1">Rating</Label>
+                <Label className="block text-sm font-medium text-foreground mb-1">Rating</Label>
                 <div className="flex space-x-1">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <button 
@@ -109,31 +109,31 @@ export function Community() {
               </div>
               
               <div>
-                <Label htmlFor="review-title" className="block text-sm font-medium text-white mb-1">Title</Label>
+                <Label htmlFor="review-title" className="block text-sm font-medium text-foreground mb-1">Title</Label>
                 <Input 
                   type="text" 
                   id="review-title" 
-                  className="w-full px-3 py-2 bg-black/20 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-white" 
+                  className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
                   placeholder="Give your review a title" 
                 />
               </div>
               
               <div>
-                <Label htmlFor="review-content" className="block text-sm font-medium text-white mb-1">Review</Label>
+                <Label htmlFor="review-content" className="block text-sm font-medium text-foreground mb-1">Review</Label>
                 <Textarea 
                   id="review-content" 
                   rows={4} 
-                  className="w-full px-3 py-2 bg-black/20 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-white" 
+                  className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
                   placeholder="Share your experience with this product" 
                 />
               </div>
               
               <div>
-                <Label htmlFor="review-image" className="block text-sm font-medium text-white mb-1">Upload Image (Optional)</Label>
+                <Label htmlFor="review-image" className="block text-sm font-medium text-foreground mb-1">Upload Image (Optional)</Label>
                 <Input 
                   type="file" 
                   id="review-image" 
-                  className="w-full px-3 py-2 bg-black/20 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-white" 
+                  className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
                   accept="image/*" 
                 />
               </div>
@@ -155,12 +155,12 @@ export function Community() {
             <h2 className="text-3xl font-bold font-sans mb-6 text-center">Customer Reviews</h2>
             
             {reviews.map((review) => (
-              <div key={review.id} className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+              <div key={review.id} className="bg-card/10 backdrop-blur-md rounded-xl p-6 border border-border">
                 <div className="flex items-center mb-4">
                   <div className="flex space-x-1 mr-4">
                     {renderStars(review.rating)}
                   </div>
-                  <span className="text-sm text-white/80">{review.date}</span>
+                  <span className="text-sm text-foreground/80">{review.date}</span>
                   {review.verified && (
                     <span className="ml-4 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-500/20 text-teal-500">
                       Verified Purchase
@@ -168,7 +168,7 @@ export function Community() {
                   )}
                 </div>
                 <h3 className="text-xl font-bold font-sans mb-2">{review.title}</h3>
-                <p className="text-white/90 mb-4 font-merienda">{review.content}</p>
+                <p className="text-foreground/90 mb-4 font-merienda">{review.content}</p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center mr-3">
                     <span className="font-semibold">

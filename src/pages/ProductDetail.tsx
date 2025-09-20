@@ -110,7 +110,7 @@ export function ProductDetail() {
 
   if (loading) {
     return (
-      <div className="bg-black text-white py-12">
+      <div className="bg-background text-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center h-96">
             <LoadingSpinner size="lg" />
@@ -122,24 +122,24 @@ export function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="bg-black text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center py-12">
-            <h1 className="text-4xl font-bold font-sans mb-8">Product Not Found</h1>
-            <p className="text-xl font-merienda mb-8">Sorry, we couldn't find the product you're looking for.</p>
-            <Link to="/shop">
-              <Button className="px-8 py-3 rounded-lg font-bold text-white bg-gradient-to-r from-teal-500 to-teal-600 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_#234645] font-merienda">
-                Continue Shopping
-              </Button>
-            </Link>
-          </div>
+      <div className="bg-background text-foreground py-12">
+      <div className="container mx-auto px-4">
+        <div className="text-center py-12">
+          <h1 className="text-4xl font-bold font-sans mb-8">Product Not Found</h1>
+          <p className="text-xl font-merienda mb-8">Sorry, we couldn't find the product you're looking for.</p>
+          <Link to="/shop">
+            <Button className="px-8 py-3 rounded-lg font-bold text-white bg-gradient-to-r from-teal-500 to-teal-600 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_#234645] font-merienda">
+              Continue Shopping
+            </Button>
+          </Link>
         </div>
       </div>
+    </div>
     );
   }
 
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="mb-6">
           <Link to="/shop" className="text-teal-500 hover:text-teal-400 transition-colors font-merienda">
@@ -160,13 +160,13 @@ export function ProductDetail() {
           
           <div>
             <h1 className="text-4xl font-bold font-sans mb-2">{product.name}</h1>
-            <p className="text-xl font-merienda text-white/80 mb-6">{product.description}</p>
+            <p className="text-xl font-merienda text-foreground/80 mb-6">{product.description}</p>
             
             <div className="mb-8">
-              <span className="text-3xl font-bold text-white font-merienda">${product.price.toFixed(2)}</span>
+              <span className="text-3xl font-bold text-foreground font-merienda">${product.price.toFixed(2)}</span>
             </div>
             
-            <p className="text-lg font-merienda text-white/90 mb-8">{product.details}</p>
+            <p className="text-lg font-merienda text-foreground/90 mb-8">{product.details}</p>
             
             <div className="mb-8">
               <h2 className="text-2xl font-semibold font-sans mb-4">Features</h2>
@@ -191,7 +191,7 @@ export function ProductDetail() {
               </Button>
               <button 
                 onClick={handleToggleWishlist}
-                className={`px-6 py-3 rounded-lg font-bold border-2 transition-all duration-300 hover:scale-105 font-merienda flex items-center ${isInWishlist(product.id) ? 'bg-red-500/20 border-red-500 text-red-500' : 'bg-white/10 border-white/20 text-white hover:shadow-[0_0_15px_#234645]'}`}
+                className={`px-6 py-3 rounded-lg font-bold border-2 transition-all duration-300 hover:scale-105 font-merienda flex items-center ${isInWishlist(product.id) ? 'bg-red-500/20 border-red-500 text-red-500' : 'bg-card/10 border-border text-foreground hover:shadow-[0_0_15px_#234645]'}`}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill={isInWishlist(product.id) ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

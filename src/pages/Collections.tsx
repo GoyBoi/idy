@@ -34,16 +34,16 @@ export function Collections() {
   ];
 
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold font-sans mb-2 text-center">Our Collections</h1>
-        <p className="text-xl font-merienda text-white/80 mb-12 text-center max-w-2xl mx-auto">
+        <p className="text-xl font-merienda text-foreground/80 mb-12 text-center max-w-2xl mx-auto">
           Explore our carefully curated collections, each telling a unique story
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {collections.map((collection) => (
-            <Card key={collection.id} className="p-6 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645]">
+            <Card key={collection.id} className="p-6 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645]">
               <div className="aspect-video w-full mx-auto mb-6">
                 <img 
                   src={collection.image} 
@@ -52,11 +52,11 @@ export function Collections() {
                 />
               </div>
               <CardHeader className="p-0 text-center">
-                <CardTitle className="text-2xl font-bold text-white font-sans mb-2">{collection.name}</CardTitle>
-                <CardDescription className="text-lg text-white/80 font-merienda mb-4">{collection.description}</CardDescription>
+                <CardTitle className="text-2xl font-bold text-foreground font-sans mb-2">{collection.name}</CardTitle>
+                <CardDescription className="text-lg text-foreground/80 font-merienda mb-4">{collection.description}</CardDescription>
               </CardHeader>
               <CardContent className="p-0 mb-4 text-center">
-                <span className="text-sm text-white/70 font-merienda">{collection.itemCount} items</span>
+                <span className="text-sm text-foreground/70 font-merienda">{collection.itemCount} items</span>
               </CardContent>
               <CardFooter className="p-0 flex justify-center">
                 <button className="px-6 py-2 rounded-lg font-semibold text-white bg-teal-500 hover:bg-teal-600 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#234645] font-merienda">

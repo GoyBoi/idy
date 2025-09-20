@@ -1,1 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mmwafrika Store</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Merienda:wght@400;700&display=swap" rel="stylesheet"><link href="/main.4bad31f25f8a76ba3c1f.css" rel="stylesheet"></head><body class="bg-black text-white"><div id="root"></div><script defer="defer" src="/main.1233ec04e38fbcd41fc1.js"></script></body></html>
+<!doctype html><html lang="en" suppresshydrationwarning><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mmwafrika Store</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Merienda:wght@400;700&display=swap" rel="stylesheet"><script>// Theme guard to prevent flash of wrong theme
+        const storedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }</script><link href="/main.b77745ad422f33611412.css" rel="stylesheet"></head><body class="overflow-x-hidden"><div id="root"></div><script defer="defer" src="/main.308a5894a9d470618731.js"></script></body></html>

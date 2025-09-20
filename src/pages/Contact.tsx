@@ -30,10 +30,10 @@ export function Contact() {
   };
 
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold font-sans mb-2 text-center">Contact Us</h1>
-        <p className="text-xl font-merienda text-white/80 mb-12 text-center max-w-2xl mx-auto">
+        <p className="text-xl font-merienda text-foreground/80 mb-12 text-center max-w-2xl mx-auto">
           We'd love to hear from you. Get in touch with our team.
         </p>
         
@@ -48,7 +48,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold font-sans mb-1">Phone</h3>
-                  <p className="font-merienda text-white/80">+27 79 042 7032</p>
+                  <p className="font-merienda text-foreground/80">+27 79 042 7032</p>
                 </div>
               </div>
               
@@ -58,7 +58,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold font-sans mb-1">Email</h3>
-                  <p className="font-merienda text-white/80">mmwafrika.prideclothing@gmail.com</p>
+                  <p className="font-merienda text-foreground/80">mmwafrika.prideclothing@gmail.com</p>
                 </div>
               </div>
               
@@ -68,7 +68,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold font-sans mb-1">WhatsApp</h3>
-                  <p className="font-merienda text-white/80">
+                  <p className="font-merienda text-foreground/80">
                     <a href="https://wa.me/27790427032" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500 transition-colors">
                       Chat with us on WhatsApp: +27 79 042 7032
                     </a>
@@ -82,7 +82,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold font-sans mb-1">Order via WhatsApp</h3>
-                  <p className="font-merienda text-white/80">
+                  <p className="font-merienda text-foreground/80">
                     <a href="https://wa.me/27790427032" target="_blank" rel="noopener noreferrer" className="hover:text-teal-500 transition-colors">
                       Place your order via WhatsApp
                     </a>
@@ -91,9 +91,9 @@ export function Contact() {
               </div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className="bg-card/10 backdrop-blur-sm rounded-xl p-6 border border-border">
               <h3 className="text-xl font-bold font-sans mb-4">Business Hours</h3>
-              <ul className="font-merienda text-white/90 space-y-2">
+              <ul className="font-merienda text-foreground/90 space-y-2">
                 <li className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span>9:00 AM - 6:00 PM</span>
@@ -112,56 +112,56 @@ export function Contact() {
           
           <div>
             <h2 className="text-2xl font-bold font-sans mb-6">Send us a Message</h2>
-            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 mt-8">
+            <form onSubmit={handleSubmit} className="bg-card/10 backdrop-blur-sm rounded-xl p-6 border border-border mt-8">
               <div className="flex flex-col gap-4">
                 <div>
-                  <Label htmlFor="name" className="block text-sm font-medium text-white mb-1">Name</Label>
+                  <Label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Name</Label>
                   <Input 
                     type="text" 
                     id="name" 
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-black/50 border-gray-600 focus:border-teal-500" 
+                    className="bg-background/50 border-border focus:border-teal-500" 
                     required 
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="email" className="block text-sm font-medium text-white mb-1">Email</Label>
+                  <Label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">Email</Label>
                   <Input 
                     type="email" 
                     id="email" 
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="bg-black/50 border-gray-600 focus:border-teal-500" 
+                    className="bg-background/50 border-border focus:border-teal-500" 
                     required 
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="subject" className="block text-sm font-medium text-white mb-1">Subject</Label>
+                  <Label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1">Subject</Label>
                   <Input 
                     type="text" 
                     id="subject" 
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="bg-black/50 border-gray-600 focus:border-teal-500" 
+                    className="bg-background/50 border-border focus:border-teal-500" 
                     required 
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="message" className="block text-sm font-medium text-white mb-1">Message</Label>
+                  <Label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">Message</Label>
                   <Textarea 
                     id="message" 
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={5} 
-                    className="bg-black/50 border-gray-600 focus:border-teal-500" 
+                    className="bg-background/50 border-border focus:border-teal-500" 
                     required 
                   />
                 </div>

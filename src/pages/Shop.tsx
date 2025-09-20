@@ -88,10 +88,10 @@ export function Shop() {
   };
 
   return (
-    <div className="bg-black text-white py-12">
+    <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold font-sans mb-2 text-center">Shop Collection</h1>
-        <p className="text-xl font-merienda text-white/80 mb-12 text-center max-w-2xl mx-auto">
+        <p className="text-xl font-merienda text-foreground/80 mb-12 text-center max-w-2xl mx-auto">
           Browse our complete collection of authentic African-inspired fashion
         </p>
         
@@ -102,7 +102,7 @@ export function Shop() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {products.map((product) => (
-              <Card key={product.id} className="p-4 rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645] relative">
+              <Card key={product.id} className="p-4 rounded-xl bg-card/10 backdrop-blur-md shadow-lg border border-border transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_#234645] relative">
                 <Link to={`/product/${product.id}`} className="block">
                   <div className="aspect-[4/5] w-full mx-auto relative">
                     <img 
@@ -115,7 +115,7 @@ export function Shop() {
                         e.preventDefault();
                         handleToggleWishlist(product);
                       }}
-                      className={`wishlist-btn absolute top-2 right-2 p-2 rounded-full bg-black/30 backdrop-blur-md border border-white/30 shadow-lg text-white hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : 'text-white'}`}
+                      className={`wishlist-btn absolute top-2 right-2 p-2 rounded-full bg-background/30 backdrop-blur-md border border-border/30 shadow-lg text-foreground hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : 'text-foreground'}`}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill={isInWishlist(product.id) ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -124,15 +124,15 @@ export function Shop() {
                   </div>
                 </Link>
                 <CardHeader className="p-0 mt-2 text-center">
-                  <CardTitle className="text-sm font-bold text-white font-merienda mt-2">
+                  <CardTitle className="text-sm font-bold text-foreground font-merienda mt-2">
                     <Link to={`/product/${product.id}`} className="hover:text-teal-500 transition-colors">
                       {product.name}
                     </Link>
                   </CardTitle>
-                  <CardDescription className="text-xs text-white/80 font-merienda mb-2">{product.description}</CardDescription>
+                  <CardDescription className="text-xs text-foreground/80 font-merienda mb-2">{product.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="p-0 mt-2 text-center">
-                  <span className="text-sm font-bold text-white font-merienda">${product.price.toFixed(2)}</span>
+                  <span className="text-sm font-bold text-foreground font-merienda">${product.price.toFixed(2)}</span>
                 </CardContent>
                 <CardFooter className="p-0 mt-2">
                   <button 
