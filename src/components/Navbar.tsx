@@ -64,17 +64,29 @@ export function Navbar() {
                 <span className="sr-only">Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-3/4 sm:max-w-sm bg-background border-r border-border">
-              <SheetHeader className="flex flex-row items-center justify-between">
-                <ThemeToggle />
+            <SheetContent side="left" className="w-3/4 sm:max-w-sm bg-white dark:bg-gray-900 border-r border-border p-0">
+              {/* Fixed header with solid background */}
+              <SheetHeader className="flex flex-row items-center justify-between p-4 bg-white dark:bg-gray-900 border-b border-border">
+                <div className="bg-teal-500/20 rounded-full p-2">
+                  <ThemeToggle />
+                </div>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="p-2 rounded-full hover:bg-foreground/10 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <X className="h-6 w-6 text-black dark:text-white" />
+                  <span className="sr-only">Close</span>
+                </Button>
               </SheetHeader>
-              <div className="flex flex-col items-center justify-between h-full py-8">
+              <div className="flex flex-col items-center justify-between h-full py-4 bg-white dark:bg-gray-900">
                 <div className="flex flex-col items-center space-y-6">
                   {navLinks.map((link) => (
                     <Link
                       key={link.path}
                       to={link.path}
-                      className="text-xl font-medium text-foreground hover:text-teal-500 transition-colors py-2"
+                      className="text-xl font-medium text-black dark:text-white hover:text-teal-500 transition-colors py-2 px-4 rounded-lg w-full text-center font-sans font-bold"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}

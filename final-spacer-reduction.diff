@@ -1,0 +1,14 @@
+```diff
+diff --git a/src/components/Navbar.tsx b/src/components/Navbar.tsx
+index 7e91230..55ee537 100644
+--- a/src/components/Navbar.tsx
++++ b/src/components/Navbar.tsx
+@@ -78,7 +90,7 @@ export function Navbar() {
+                 </Button>
+               </SheetHeader>
+-              <div className="flex flex-col items-center justify-between h-full py-8">
++              <div className="flex flex-col items-center justify-between h-full py-4 bg-white dark:bg-gray-900">
+                 <div className="flex flex-col items-center space-y-6">
+                   {navLinks.map((link) => (
+                     <Link
+```

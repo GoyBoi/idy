@@ -137,10 +137,10 @@ export function Home() {
         
         {/* Overlay content */}
         <div className="relative z-10 text-center px-4 flex flex-col items-center justify-center h-full">
-          <h1 className="text-4xl md:text-6xl font-bold font-sans text-foreground text-center px-4 mb-6 drop-shadow-md">
+          <h1 className="text-4xl md:text-6xl font-bold font-sans text-white text-center px-4 mb-6 drop-shadow-lg [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)] [-webkit-text-stroke:_1px_black]">
             Discover Unique African Fashion
           </h1>
-          <p className="text-xl md:text-2xl font-merienda text-foreground mb-8 max-w-2xl mx-auto drop-shadow-md">
+          <p className="text-xl md:text-2xl font-merienda text-white mb-8 max-w-2xl mx-auto drop-shadow-lg [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)] [-webkit-text-stroke:_0.5px_black]">
             Explore our curated collection of authentic African-inspired clothing and accessories
           </p>
           <Button 
@@ -155,8 +155,8 @@ export function Home() {
       {/* Promotional Banner */}
       <section className="container mx-auto px-4 py-8">
         <div className="bg-gradient-to-r from-teal-600 to-teal-800 rounded-xl p-6 text-center">
-          <h2 className="text-2xl font-bold font-sans mb-2">FREE SHIPPING ON ORDERS OVER $100</h2>
-          <p className="font-merienda mb-4">Limited time offer. Shop now!</p>
+          <h2 className="text-2xl font-bold font-sans mb-2 text-white drop-shadow-lg [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)] [-webkit-text-stroke:_0.5px_black]">FREE SHIPPING ON ORDERS OVER $100</h2>
+          <p className="font-merienda mb-4 text-white drop-shadow-md [text-shadow:_0_1px_2px_rgba(0,0,0,0.5)] [-webkit-text-stroke:_0.3px_black]">Limited time offer. Shop now!</p>
           <Button 
             className="px-6 py-2 rounded-lg font-semibold text-white bg-black/40 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-black/60 hover:shadow-[0_0_15px_#234645] transition-all duration-300 font-merienda"
             onClick={() => navigate('/shop')}
