@@ -25,58 +25,61 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 p-4 bg-background/30 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="sticky top-0 z-50 h-12 bg-background/30 backdrop-blur-md border-b border-border">
+      <div className="px-4 flex justify-between items-center h-full">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold font-sans">Mmwafrika</Link>
+        <Link to="/" className="text-lg font-bold font-sans h-5 flex items-center">Mmwafrika</Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex space-x-3">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.path} 
-              to={link.path} 
-              className="hover:text-teal-500 transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden lg:flex">
+          <div className="flex items-center gap-2">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.path} 
+                to={link.path} 
+                className="text-sm hover:text-teal-500 transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
         
         {/* Cart and User Icons */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <WishlistIcon />
           <CartIcon />
           <ThemeToggle />
           
-          <button className="p-2 rounded-full hover:bg-foreground/10 transition-colors" aria-label="User Account">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button className="p-1.5 rounded-full hover:bg-foreground/10 transition-colors" aria-label="User Account">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
             <span className="sr-only">User</span>
           </button>
           
           {/* Mobile menu button using Sheet */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden p-2 rounded-full hover:bg-foreground/10 transition-colors">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-3/4 sm:max-w-sm bg-white dark:bg-gray-900 border-r border-border p-0 overflow-hidden" style={{ height: '100vh' }}>
+          <div className="lg:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="p-1.5 rounded-full hover:bg-foreground/10 transition-colors">
+                  <Menu className="h-4 w-4" />
+                  <span className="sr-only">Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-3/4 sm:max-w-sm bg-white dark:bg-gray-900 border-r border-border p-0 overflow-hidden" style={{ height: '100vh' }}>
               {/* Fixed header with solid background */}
               <SheetHeader className="flex flex-row items-center justify-between p-2 bg-white dark:bg-gray-900 border-b border-border">
-                <div className="bg-teal-500/20 rounded-full p-2 hover:bg-teal-500/30 transition-all duration-300 ease-in-out hover:scale-105">
+                <div className="bg-teal-500/20 rounded-full p-1.5 hover:bg-teal-500/30 transition-all duration-300 ease-in-out hover:scale-105">
                   <ThemeToggle />
                 </div>
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="p-2 rounded-full hover:bg-foreground/10 transition-all duration-300 ease-in-out hover:scale-110"
+                  className="p-1.5 rounded-full hover:bg-foreground/10 transition-all duration-300 ease-in-out hover:scale-105"
                   onClick={() => setIsOpen(false)}
                 >
-                  <X className="h-6 w-6 text-foreground" />
+                  <X className="h-4 w-4 text-foreground" />
                   <span className="sr-only">Close</span>
                 </Button>
               </SheetHeader>
@@ -105,7 +108,7 @@ export function Navbar() {
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                      <MessageCircle className="h-5 w-5 mr-2" />
+                      <MessageCircle className="h-4 w-4 mr-2" />
                       +27 79 042 7032
                     </a>
                   </Button>
@@ -119,7 +122,7 @@ export function Navbar() {
                       href="mailto:mmwafrika.prideclothing@gmail.com" 
                       className="flex items-center"
                     >
-                      <Mail className="h-5 w-5 mr-2" />
+                      <Mail className="h-4 w-4 mr-2" />
                       <span className="truncate">mmwafrika.prideclothing@gmail.com</span>
                     </a>
                   </Button>
@@ -133,14 +136,15 @@ export function Navbar() {
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                      <ShoppingBag className="h-5 w-5 mr-2" />
+                      <ShoppingBag className="h-4 w-4 mr-2" />
                       Order via WhatsApp
                     </a>
                   </Button>
                 </div>
               </div>
             </SheetContent>
-          </Sheet>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>
