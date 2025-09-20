@@ -71,6 +71,7 @@ export function Wishlist() {
                   <button 
                     onClick={() => removeFromWishlist(item.id)}
                     className="wishlist-btn w-full py-2 rounded-lg bg-card/10 backdrop-blur-md border border-border shadow-md text-foreground hover:scale-[1.02] hover:shadow-[0_0_15px_#234645] transition-all duration-300 font-merienda"
+                    aria-label="Remove from wishlist"
                   >
                     Remove from Wishlist
                   </button>

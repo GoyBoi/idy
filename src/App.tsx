@@ -38,9 +38,9 @@ function App() {
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         <WishlistProvider>
           <CartProvider>
-            <div className="bg-background text-foreground min-h-screen flex flex-col">
+            <div className="bg-background text-foreground min-h-screen flex flex-col min-w-full">
               <Navbar />
-              <main className="flex-grow">
+              <main className="flex-grow min-w-full overflow-x-hidden">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/shop" element={<Shop />} />

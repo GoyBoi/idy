@@ -26,3 +26,15 @@ This project is guided by a specific agent configuration that details the fronte
 ## Usage
 
 This directory serves as the foundational context for developing the Mmwafrika Store frontend. The agent instruction file should be the primary reference for implementation details. The documentation and examples provide specific guidance on styling, image handling, and component structure. The images can be used as placeholders during development.
+
+## Available MCP Servers
+
+The following MCP servers are available for use in this project:
+
+- **brave-search** (6 tools): For web searches, image searches, news searches, video searches, local searches, and summarization.
+- **context7** (2 tools): For resolving library IDs and getting library documentation.
+- **github** (26 tools): For interacting with GitHub repositories, including creating repositories, managing issues and pull requests, and searching code.
+- **sequential-thinking** (1 tool): For complex problem-solving through structured thinking processes.
+- **shadcn** (7 tools): For managing shadcn/ui components, including searching, viewing, and adding components.
+- **supabase** (20 tools): For interacting with Supabase projects, including database operations, edge functions, and migrations.
+- **puppeteer** (8 tools): For browser automation, including navigation, clicking, filling forms, and taking screenshots.

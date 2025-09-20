@@ -117,6 +117,12 @@ The Mmwafrika Store e-commerce frontend has been successfully developed as a mod
 6. **Mobile Navigation Enhancement**: Replaced sliding mobile menu with full-screen glassmorphic overlay using Shadcn UI Sheet component for improved user experience and consistency with design system
 7. **Hamburger Menu Contact Information Update**: Removed labels from contact information in hamburger menu, displaying only icons and raw values (+27 79 042 7032, mmwafrika.prideclothing@gmail.com)
 8. **Hamburger Menu Consistency**: Ensured hamburger menu and its overlay are consistent across all small screens
+9. **Hamburger Menu Secondary Close Button Removal**: Deleted ghost secondary close button from SheetContent component that was causing confusion
+10. **Hamburger Menu Contact Block Repositioning**: Lifted contact block to safe air-space with proper spacing
+11. **Desktop Navigation Leak Prevention**: Fixed breakpoint issues to prevent desktop navigation from showing on tablet-sized screens
+12. **Wishlist Heart Color Locking**: Made wishlist hearts use indestructible colors that never flip with themes
+13. **Hamburger Menu Overlay Transparency Fix**: Resolved transparency issues in hamburger menu overlay
+14. **Shop Now Button Text Fix**: Ensured "Shop Now" button text is always white for consistent visibility
 
 ### Feature Enhancements
 1. **Loading States Implementation**: Added loading indicators throughout the application to improve user experience during asynchronous operations

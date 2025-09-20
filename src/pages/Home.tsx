@@ -158,7 +158,7 @@ export function Home() {
           <h2 className="text-2xl font-bold font-sans mb-2 text-white drop-shadow-lg [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)] [-webkit-text-stroke:_0.5px_black]">FREE SHIPPING ON ORDERS OVER $100</h2>
           <p className="font-merienda mb-4 text-white drop-shadow-md [text-shadow:_0_1px_2px_rgba(0,0,0,0.5)] [-webkit-text-stroke:_0.3px_black]">Limited time offer. Shop now!</p>
           <Button 
-            className="px-6 py-2 rounded-lg font-semibold text-white bg-black/40 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-black/60 hover:shadow-[0_0_15px_#234645] transition-all duration-300 font-merienda"
+            className="px-6 py-2 rounded-lg font-semibold text-white bg-background/40 backdrop-blur-sm border border-border/20 hover:scale-105 hover:bg-background/60 hover:shadow-[0_0_15px_#234645] transition-all duration-300 font-merienda"
             onClick={() => navigate('/shop')}
           >
             Shop Now
@@ -180,10 +180,12 @@ export function Home() {
                       e.preventDefault();
                       handleToggleWishlist(product);
                     }}
-                    className={`wishlist-btn absolute top-2 right-2 p-2 rounded-full bg-background/30 backdrop-blur-md border border-border/30 shadow-lg text-foreground hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : 'text-foreground'}`}
+                    className={`wishlist-btn absolute top-2 right-2 p-2 rounded-full bg-background/30 backdrop-blur-md border border-[#dc7030] shadow-lg text-foreground hover:scale-110 hover:shadow-[0_0_15px_#234645] transition-all duration-300 ${isInWishlist(product.id) ? 'text-red-500' : 'text-foreground'}`}
+                    style={{ border: '1px solid #dc7030' }}
+                    aria-label={isInWishlist(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill={isInWishlist(product.id) ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="#dc7030" />
                     </svg>
                   </button>
                 </div>

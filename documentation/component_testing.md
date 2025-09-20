@@ -99,3 +99,8 @@ The current tests cover the core functionality of the components and contexts. F
 - Updated hamburger menu to use Shadcn UI Sheet component for improved mobile experience
 - Removed labels from contact information in hamburger menu for cleaner UI
 - Ensured hamburger menu overlay consistency across all small screens
+- Deleted ghost secondary close button from SheetContent component
+- Lifted contact block to safe air-space in hamburger menu
+- Locked wishlist heart colors to indestructible values
+- Fixed hamburger menu overlay transparency issues
+- Ensured "Shop Now" button text is always white for consistent visibility
