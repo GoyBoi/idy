@@ -5,32 +5,27 @@ This folder contains comprehensive documentation for the Mmwafrika Store e-comme
 ## Documentation Files
 
 ### 1. Project Documentation
-**File**: `project_documentation.md`
+**File**: `SUMMARY.md`
 **Purpose**: Overview of the project structure, issues resolved, current status, and future development steps.
 
-### 2. Technical Setup
-**File**: `technical_setup.md`
-**Purpose**: Detailed information about project dependencies, configuration files, environment setup, and development workflow.
+### 2. Mobile Menu Implementation
+**File**: `mobile-menu-current-implementation.md`
+**Purpose**: Current implementation details of the mobile menu component.
 
-### 3. Design System
-**File**: `design_system.md`
-**Purpose**: Guidelines for visual design, color system, typography, UI components, and accessibility standards.
+### 3. Technical Implementation Details
+**File**: `mobile-menu-implementation.md`
+**Purpose**: Detailed technical information about the mobile menu implementation.
 
-### 4. Testing
-**File**: `testing.md`
-**Purpose**: Information about the testing setup, how to run tests, and guidelines for writing tests.
-
-### 5. Component Testing
-**File**: `component_testing.md`
-**Purpose**: Detailed information about testing individual components and contexts.
+### 4. Quality Assurance
+**File**: `mobile-menu-qa-checklist.md`
+**Purpose**: Comprehensive checklist for verifying mobile menu functionality.
 
 ## How to Use This Documentation
 
-1. **Project Overview**: Start with `project_documentation.md` to understand the overall project structure and progress.
-
-2. **Technical Details**: Refer to `technical_setup.md` for information about dependencies, configuration, and development environment setup.
-
-3. **Design Guidelines**: Consult `design_system.md` when implementing new UI components or modifying existing ones to ensure visual consistency.
+1. **Project Overview**: Start with `SUMMARY.md` to understand the overall project structure and progress.
+2. **Mobile Menu Details**: Refer to `mobile-menu-current-implementation.md` for current implementation details.
+3. **Technical Information**: Consult `mobile-menu-implementation.md` for technical implementation details.
+4. **Quality Assurance**: Use `mobile-menu-qa-checklist.md` for testing and verification.
 
 ## Maintaining Documentation
 
