@@ -16,6 +16,7 @@ import { WishlistProvider } from './context/WishlistContext';
 import { Confirmation } from './components/Confirmation';
 import { useCart } from './context/CartContext';
 import { ThemeProvider } from './components/ThemeProvider';
+import { FloatingBackgroundElements } from './components/FloatingBackgroundElements';
 
 function ConfirmationWrapper() {
   const { confirmation, hideConfirmation } = useCart();
@@ -38,6 +39,7 @@ function App() {
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         <WishlistProvider>
           <CartProvider>
+            <FloatingBackgroundElements />
             <div className="bg-background text-foreground min-h-screen flex flex-col min-w-full">
               <Navbar />
               <main className="flex-grow min-w-full overflow-x-hidden">
