@@ -12,7 +12,7 @@ export function FloatingBackgroundElements() {
     // Create floating elements
     const createFloatingElement = () => {
       const element = document.createElement('div');
-      element.className = 'floating-element absolute rounded-full opacity-10';
+      element.className = 'floating-element absolute rounded-full';
       
       // Random properties
       const size = Math.random() * 100 + 50; // 50-150px
@@ -35,6 +35,7 @@ export function FloatingBackgroundElements() {
       element.style.borderRadius = shape === 'circle' ? '50%' : '20%';
       element.style.animation = `float ${animationDuration}s infinite ease-in-out ${animationDelay}s`;
       element.style.zIndex = '-1';
+      element.style.opacity = '0.15';
       
       return element;
     };

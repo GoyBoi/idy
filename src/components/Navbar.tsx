@@ -34,6 +34,12 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <Link 
+              to="/settings" 
+              className="text-sm hover:text-teal-500 transition-colors"
+            >
+              Settings
+            </Link>
           </div>
         </div>
         

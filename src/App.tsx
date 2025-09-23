@@ -16,11 +16,13 @@ import { WishlistProvider } from './context/WishlistContext';
 import { Confirmation } from './components/Confirmation';
 import { useCart } from './context/CartContext';
 import { ThemeProvider } from './components/ThemeProvider';
-import { FloatingBackgroundElements } from './components/FloatingBackgroundElements';
+import { DynamicBackground } from './components/DynamicBackground';
 import FileUploadDemo from './pages/FileUploadDemo';
 import ButtonShowcase from './pages/ButtonShowcase';
 import DigitalHeroDemo from './pages/DigitalHeroDemo';
 import DynamicCardDemo from './pages/DynamicCardDemo';
+import Settings from './pages/Settings';
+import LiquidEtherTest from './pages/LiquidEtherTest';
 
 function ConfirmationWrapper() {
   const { confirmation, hideConfirmation } = useCart();
@@ -43,7 +45,7 @@ function App() {
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         <WishlistProvider>
           <CartProvider>
-            <FloatingBackgroundElements />
+            <DynamicBackground />
             <div className="bg-background text-foreground min-h-screen flex flex-col min-w-full">
               <Navbar />
               <main className="flex-grow min-w-full overflow-x-hidden">
@@ -61,6 +63,8 @@ function App() {
                 <Route path="/button-showcase" element={<ButtonShowcase />} />
                 <Route path="/digital-hero-demo" element={<DigitalHeroDemo />} />
                 <Route path="/dynamic-card-demo" element={<DynamicCardDemo />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/liquid-ether-test" element={<LiquidEtherTest />} />
               </Routes>
               </main>
               <Footer />

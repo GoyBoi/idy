@@ -19,6 +19,7 @@ import {
   Users,
   MessageCircle,
   ShoppingBag,
+  Settings,
   Menu,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -78,6 +79,12 @@ export function MobileMenu() {
               <Link to="/community" className="flex items-center py-2 px-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-black dark:text-white">
                 <Users className="h-4 w-4 mr-3" />
                 <span className="font-medium">Community</span>
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/settings" className="flex items-center py-2 px-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-black dark:text-white">
+                <Settings className="h-4 w-4 mr-3" />
+                <span className="font-medium">Settings</span>
               </Link>
             </DropdownMenuItem>
           </DropdownMenuGroup>
