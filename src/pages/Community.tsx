@@ -3,9 +3,11 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
+import FileUpload from '@/components/FileUpload';
 
 export function Community() {
   const [rating, setRating] = useState(0);
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   
   // Sample reviews data
   const reviews = [
@@ -52,6 +54,39 @@ export function Community() {
     ));
   };
 
+  const handleFileChange = (files: File[]) => {
+    setUploadedFiles(files);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(e.target as HTMLFormElement);
+    
+    // Add uploaded files to form data
+    uploadedFiles.forEach((file, index) => {
+      formData.append(`image-${index}`, file);
+    });
+    
+    // Here you would typically send the form data to your backend
+    console.log('Form data:', {
+      name: formData.get('review-name'),
+      rating: rating,
+      title: formData.get('review-title'),
+      content: formData.get('review-content'),
+      images: uploadedFiles.map(file => file.name)
+    });
+    
+    // Show success message
+    alert('Review submitted successfully!');
+    
+    // Reset form
+    (e.target as HTMLFormElement).reset();
+    setRating(0);
+    setUploadedFiles([]);
+  };
+
   return (
     <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
@@ -80,14 +115,16 @@ export function Community() {
           {/* Leave a Review */}
           <div className="bg-card/10 backdrop-blur-md rounded-xl p-6 mb-12 border border-border">
             <h2 className="text-2xl font-bold font-sans mb-6">Share Your Experience</h2>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <Label htmlFor="review-name" className="block text-sm font-medium text-foreground mb-1">Name</Label>
                 <Input 
                   type="text" 
                   id="review-name" 
+                  name="review-name"
                   className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
                   placeholder="Your name" 
+                  required
                 />
               </div>
               
@@ -113,8 +150,10 @@ export function Community() {
                 <Input 
                   type="text" 
                   id="review-title" 
+                  name="review-title"
                   className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
                   placeholder="Give your review a title" 
+                  required
                 />
               </div>
               
@@ -122,20 +161,26 @@ export function Community() {
                 <Label htmlFor="review-content" className="block text-sm font-medium text-foreground mb-1">Review</Label>
                 <Textarea 
                   id="review-content" 
+                  name="review-content"
                   rows={4} 
                   className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
                   placeholder="Share your experience with this product" 
+                  required
                 />
               </div>
               
               <div>
-                <Label htmlFor="review-image" className="block text-sm font-medium text-foreground mb-1">Upload Image (Optional)</Label>
-                <Input 
-                  type="file" 
-                  id="review-image" 
-                  className="w-full px-3 py-2 bg-background/20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-foreground" 
-                  accept="image/*" 
+                <Label className="block text-sm font-medium text-foreground mb-1">Upload Image (Optional)</Label>
+                <FileUpload 
+                  onFileChange={handleFileChange}
+                  maxSizeMB={5}
+                  accept="image/svg+xml,image/png,image/jpeg,image/jpg,image/gif"
                 />
+                {uploadedFiles.length > 0 && (
+                  <div className="mt-2 text-sm text-foreground/80">
+                    {uploadedFiles.length} file(s) selected
+                  </div>
+                )}
               </div>
               
               <div>

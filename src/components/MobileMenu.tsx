@@ -27,7 +27,11 @@ export function MobileMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="p-1.5 rounded-full hover:bg-foreground/10 transition-colors lg:hidden">
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="p-1.5 rounded-full hover:bg-foreground/10 transition-all duration-300 hover:scale-110 hover:shadow-lg dark:hover:shadow-teal-500/20 lg:hidden"
+        >
           <Menu className="h-4 w-4" />
           <span className="sr-only">Menu</span>
         </Button>

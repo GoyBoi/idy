@@ -86,6 +86,13 @@ module.exports = (env, argv) => {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
         "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      },
+      // Serve the Tailwind CSS file
+      setupMiddlewares: (middlewares, devServer) => {
+        devServer.app.get('/output.css', (req, res) => {
+          res.sendFile(path.resolve(__dirname, 'dist/output.css'));
+        });
+        return middlewares;
       }
     },
   };

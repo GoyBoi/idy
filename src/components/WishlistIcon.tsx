@@ -9,7 +9,12 @@ export function WishlistIcon() {
   const { wishlist } = useWishlist();
   
   return (
-    <Button asChild variant="ghost" size="icon" className="relative h-8 w-8 rounded-full">
+    <Button 
+      asChild 
+      variant="ghost" 
+      size="icon" 
+      className="relative h-8 w-8 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg dark:hover:shadow-teal-500/20"
+    >
       <Link to="/wishlist" aria-label="Wishlist">
         <Heart size={16} aria-hidden="true" fill="#dc7030" stroke="#dc7030" />
         <span className="sr-only">Wishlist</span>

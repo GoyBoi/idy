@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { Link } from 'react-router-dom';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
+import { TrashIcon } from 'lucide-react';
 
 export function Cart() {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
   const [updatingItemId, setUpdatingItemId] = useState<number | null>(null);
+  const [notification, setNotification] = useState<{message: string, show: boolean} | null>(null);
 
   const handleUpdateQuantity = async (itemId: number, quantity: number) => {
     setUpdatingItemId(itemId);
@@ -17,10 +19,26 @@ export function Cart() {
     setUpdatingItemId(null);
   };
 
+  const handleRemoveFromCart = (itemId: number, itemName: string) => {
+    removeFromCart(itemId);
+    // Show notification
+    setNotification({message: `${itemName} removed from cart`, show: true});
+    setTimeout(() => {
+      setNotification(null);
+    }, 1500);
+  };
+
   return (
     <div className="bg-background text-foreground py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold font-sans mb-8 text-center">Your Shopping Cart</h1>
+        
+        {/* Notification */}
+        {notification && notification.show && (
+          <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 animate-fade-in">
+            {notification.message}
+          </div>
+        )}
         
         {cart.length === 0 ? (
           <div className="text-center py-12">
@@ -81,12 +99,14 @@ export function Cart() {
                           <span className="text-lg font-bold text-foreground font-merienda">
                             ${(item.price * item.quantity).toFixed(2)}
                           </span>
-                          <button 
-                            onClick={() => removeFromCart(item.id)}
-                            className="text-red-400 hover:text-red-300 transition-colors font-merienda"
+                          <Button 
+                            variant="destructive"
+                            onClick={() => handleRemoveFromCart(item.id, item.name)}
+                            aria-label="Remove item from cart"
                           >
-                            Remove
-                          </button>
+                            <TrashIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+                            <span className="ml-2">Remove</span>
+                          </Button>
                         </CardFooter>
                       </div>
                     </div>

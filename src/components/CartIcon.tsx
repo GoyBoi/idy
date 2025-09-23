@@ -9,7 +9,12 @@ export function CartIcon() {
   const { cartCount } = useCart();
   
   return (
-    <Button asChild variant="ghost" size="icon" className="relative h-8 w-8 rounded-full">
+    <Button 
+      asChild 
+      variant="ghost" 
+      size="icon" 
+      className="relative h-8 w-8 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg dark:hover:shadow-teal-500/20"
+    >
       <Link to="/cart" aria-label="Shopping Cart">
         <ShoppingCart size={16} aria-hidden="true" />
         <span className="sr-only">Cart</span>
