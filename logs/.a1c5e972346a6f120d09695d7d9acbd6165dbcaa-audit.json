@@ -6,26 +6,6 @@
     "auditLog": "/home/zoro/Desktop/idy/logs/.a1c5e972346a6f120d09695d7d9acbd6165dbcaa-audit.json",
     "files": [
         {
-            "date": 1757702502463,
-            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-12.log",
-            "hash": "d84621f1ba40397c0ef707f046460875c23dc0a6cf24b4e74a0b0471c2be984c"
-        },
-        {
-            "date": 1757715794482,
-            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-13.log",
-            "hash": "378ad915b5413d6cbdc5d6bce30262a3a6562c837d5f524f16d220f4c88c5e9e"
-        },
-        {
-            "date": 1757806425709,
-            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-14.log",
-            "hash": "3ab362032dc7354435aee5a8c11a4d95613e13b7dd492738ebd1396c6840915d"
-        },
-        {
-            "date": 1757979041694,
-            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-16.log",
-            "hash": "5475e93d9ba1b181fef42be5d043b329dd3722203dfc33976b40d61e0c48116a"
-        },
-        {
             "date": 1758242095860,
             "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-19.log",
             "hash": "5705df3f621bb0d6878198ecbbf2d24eee74f3c976ea0781267f303ba56ada56"
@@ -49,6 +29,16 @@
             "date": 1758580616222,
             "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-23.log",
             "hash": "c544e44d2f659a614a4352323ba8b4e98d4bdf616b15fd95070eaf7eef90fa4b"
+        },
+        {
+            "date": 1759190034239,
+            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-09-30.log",
+            "hash": "dad97cf82654e1722efab77300cdda60e0d940795831a093ea2af5a217f94223"
+        },
+        {
+            "date": 1759276459410,
+            "name": "/home/zoro/Desktop/idy/logs/mcp-puppeteer-2025-10-01.log",
+            "hash": "d2c83a37d213cefa7dc28a2befa3d8fc34de33dac6bbdf548480923360fd4dd4"
         }
     ],
     "hashType": "sha256"

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/input.css'; // Import Tailwind CSS
+import './css/global.css'; // Import global CSS with Tailwind
 import App from './App';
 
 // Render the app
